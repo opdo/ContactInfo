@@ -1,0 +1,124 @@
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\MainWindow.g.cs
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\App.g.cs
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO_MarkupCompile.cache
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO_MarkupCompile.lref
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.exe.config
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.exe
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.pdb
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wLogin.g.cs
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\MainWindow.baml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wLogin.baml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.g.resources
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.Properties.Resources.resources
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csproj.GenerateResource.Cache
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csproj.CoreCompileInputs.cache
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.exe
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.pdb
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.exe.licenses
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignColors.dll
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignThemes.Wpf.dll
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignThemes.Wpf.pdb
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignThemes.Wpf.xml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\App.baml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\GeneratedInternalTypeHelper.g.cs
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\ResourceXAML\MainResource.baml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wMain.g.cs
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wMain.baml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoCustomer.g.cs
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoCustomer.baml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wCalling.g.cs
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wCalling.baml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.dll
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.SqlServer.dll
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.dll
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.EF6.dll
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.Linq.dll
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.xml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.SqlServer.xml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.xml
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.dll.config
+e:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csproj.ResolveComReference.cache
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.exe.manifest
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.application
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.exe.manifest
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.application
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageCustomer.g.cs
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageCustomer.baml
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csprojResolveAssemblyReference.cache
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageEmployee.g.cs
+E:\Data\Documents\Visual Studio 2017\Projects\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageEmployee.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.exe.config
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.exe.manifest
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.application
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.exe
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\CONTACT_INFO.pdb
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignColors.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Windows.Interactivity.dll
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.xml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.xml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Data.SQLite.dll.config
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\bin\Debug\System.Windows.Interactivity.xml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csproj.ResolveComReference.cache
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\MainWindow.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageBill.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageCustomer.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageEmployees.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageHelp.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageProduct.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageWarehouse.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\ucBill.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wCalling.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoBill.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoCustomer.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoEmployee.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoProduct.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoWarehouse.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wLogin.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wMain.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wTicket.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\App.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO_MarkupCompile.cache
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO_MarkupCompile.lref
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\App.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\MainWindow.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\ResourceXAML\MainResource.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageBill.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageCustomer.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageEmployees.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageHelp.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageProduct.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\Page\PageWarehouse.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\ucBill.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wCalling.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoBill.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoCustomer.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoEmployee.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoProduct.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wInfoWarehouse.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wLogin.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wMain.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\Windows\wTicket.baml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.g.resources
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.Properties.Resources.resources
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csproj.GenerateResource.cache
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.exe.licenses
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csproj.CoreCompileInputs.cache
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.TrustInfo.xml
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.exe.manifest
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.application
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csproj.CopyComplete
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.exe
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.pdb
+D:\Project\C&T\CONTACT_INFO\CONTACT_INFO\obj\Debug\CONTACT_INFO.csprojAssemblyReference.cache

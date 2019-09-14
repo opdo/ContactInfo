@@ -1,0 +1,340 @@
+﻿<UserControl x:Class="CONTACT_INFO.Windows.Page.PageCustomer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CONTACT_INFO.Windows.Page"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="DataGridColumnSeparatorStyle" TargetType="DataGridCell">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="LightGray"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Margin="20 20 20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon Grid.Column="0" Kind="UserSearch" Foreground="{Binding ElementName=txtAccount, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" Width="24" Height="24"/>
+            <TextBox x:Name="txtSearch" Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" materialDesign:HintAssist.Hint="Tìm kiếm khách hàng" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+        </Grid>
+        <DockPanel DockPanel.Dock="Bottom" Margin="0 5 15 15" HorizontalAlignment="Right">
+
+            <Button
+                    Command="{Binding ExportExcel}"
+                    x:Name="btnExport"
+                    Margin="0 0 10 0"
+                    Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    ToolTip="Xuất file Excel">
+                <materialDesign:PackIcon
+                        Kind="Export"
+                        Height="24"
+                        Width="24" />
+            </Button>
+
+            <Button
+                    CommandParameter="{Binding ElementName=listCustomer, Path=SelectedItems}"
+                    Command="{Binding DeleteCustomer}"
+                    Margin="0 0 10 0"
+                    x:Name="btnDelete"
+                    Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                    ToolTip="Xóa khách hàng"
+                    Visibility="{Binding Visibility, ElementName=cardInfo}">
+                <materialDesign:PackIcon
+                        Kind="DeleteForever"
+                        Height="24"
+                        Width="24" />
+            </Button>
+
+            <Button
+                    Command="{Binding NewCustomer}"
+                    x:Name="btnAdd"
+                    Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    ToolTip="Thêm khách hàng mới">
+                <materialDesign:PackIcon
+                        Kind="PersonAddOutline"
+                        Height="24"
+                        Width="24" />
+            </Button>
+        </DockPanel>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <DataGrid
+                FontSize="16"
+                SelectionMode="Single"
+                    CanUserDeleteRows="False"
+                    SelectedItem="{Binding SelectedCustomer}"
+                    x:Name="listCustomer"
+                    VerticalScrollBarVisibility="Auto"
+                    Grid.Row="1"
+                    Background="Transparent"
+                    ItemsSource="{Binding ListData, Mode=TwoWay}"
+                    Margin="5 8 5 0"
+                    CanUserSortColumns="True"
+                    CanUserAddRows="False"
+                    AutoGenerateColumns="False"
+                    materialDesign:DataGridAssist.CellPadding="13 8 8 8"
+                    materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontSize" Value="16"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding STT}"
+                                    Header="STT"
+                                    MaxLength="15"
+                                    IsReadOnly="True"/>
+
+                    <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding FirstPhone}"
+                                    Header="Điện thoại"
+                                    IsReadOnly="True"
+                                    MaxLength="50"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                    <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding Fullname}"
+                                    Header="Họ tên"
+                                    Width="2*"
+                                    MaxLength="255"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                    <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding Address}"
+                                    Header="Địa chỉ"
+                                    Width="2*"
+                                    MaxLength="255"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                    <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding Gastype}"
+                                    Header="Loại Gas"
+                                    Width="1*"
+                                    MaxLength="50"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                    <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Header="Ghi chú"
+                                    Width="1*"
+                                    MaxLength="255"
+                                    Binding="{Binding Note}"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <GridSplitter 
+                    Grid.Row="1" 
+                    Grid.Column="1"          
+                    HorizontalAlignment="Stretch"
+                    Background="Gray" 
+                    ShowsPreview="true"
+                    Width="1"/>
+
+
+            <materialDesign:Card
+                    x:Name="cardInfo"
+                    Margin="5 8 5 0"
+                    Grid.Row="1"
+                    Background="{Binding ElementName=btnAdd, Path=Background}"
+                    Grid.Column="2"
+                    Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                    Padding="0"
+                    Width="Auto">
+                <materialDesign:Card.Style>
+                    <Style TargetType="materialDesign:Card">
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=listCustomer, Path=SelectedIndex}" Value="-1">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </materialDesign:Card.Style>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                            Grid.ColumnSpan="2"
+                            TextWrapping="Wrap"
+                            Grid.Row="0"
+                            Margin="16 16 16 4"
+                            Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                            Text="{Binding SelectedCustomer.Fullname, Mode=OneWay}"/>
+                    <Separator
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Style="{StaticResource MaterialDesignLightSeparator}" />
+                    <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedCustomer.Address}" Value="">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon x:Name="iconAddress" Margin="16 0 5 8" Grid.Column="0" Kind="LocationOn">
+                            </materialDesign:PackIcon>
+                            <TextBlock
+                                    TextWrapping="WrapWithOverflow"
+                                    Grid.Column="1"
+                                    Margin="0 0 16 8"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    Text="{Binding SelectedCustomer.Address, Mode=OneWay}"
+                                    Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            </TextBlock>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedCustomer.Gastype}" Value="">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon x:Name="iconGasType" Margin="16 0 5 8" Grid.Column="0" Kind="Dropbox">
+                            </materialDesign:PackIcon>
+                            <TextBlock
+                                TextWrapping="WrapWithOverflow"
+                                Grid.Column="1"
+                                Margin="0 0 16 8"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Text="{Binding SelectedCustomer.Gastype, Mode=OneWay}"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            </TextBlock>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedCustomer.PhoneText}" Value="">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon x:Name="iconPhone" Margin="16 0 5 8" Grid.Column="0" Kind="Phone">
+                            </materialDesign:PackIcon>
+                            <TextBlock
+                                TextWrapping="WrapWithOverflow"
+                                Grid.Column="1"
+                                Margin="0 0 16 8"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Text="{Binding SelectedCustomer.PhoneText, Mode=OneWay}"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            </TextBlock>
+                        </Grid>
+
+                        <Grid>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedCustomer.Note}" Value="">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon x:Name="iconNote" Margin="16 0 5 8" Grid.Column="0" Kind="Note">
+                            </materialDesign:PackIcon>
+                            <TextBlock
+                                TextWrapping="WrapWithOverflow"
+                                Grid.Column="1"
+                                Margin="0 0 16 8"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Text="{Binding SelectedCustomer.Note, Mode=OneWay}"
+                                Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            </TextBlock>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+                        <Button
+                            Command="{Binding BillCustomer}"
+                            CommandParameter="{Binding ElementName=listCustomer, Path=SelectedItem}"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Margin="2"
+                            materialDesign:RippleAssist.IsCentered="True">
+                            TẠO HÓA ĐƠN
+                        </Button>
+
+                        <Button
+                            Command="{Binding InfoCustomer}"
+                            CommandParameter="{Binding ElementName=listCustomer, Path=SelectedItem}"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Margin="5"
+                            materialDesign:RippleAssist.IsCentered="True">
+                            XEM CHI TIẾT
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+
+    </DockPanel>
+</UserControl>

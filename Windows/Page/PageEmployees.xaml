@@ -1,0 +1,212 @@
+﻿<UserControl x:Class="CONTACT_INFO.Windows.Page.PageEmployees"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CONTACT_INFO.Windows.Page"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{StaticResource EmployeeVM}">
+    <UserControl.Resources>
+        <Style x:Key="DataGridColumnSeparatorStyle" TargetType="DataGridCell">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="LightGray"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Margin="20 20 20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <materialDesign:PackIcon Grid.Column="0" Kind="UserSearch" Foreground="{Binding ElementName=txtAccount, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" Width="24" Height="24"/>
+            <TextBox Name="txtSearch2" Text="{Binding SearchString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" materialDesign:HintAssist.Hint="Tìm kiếm nhân viên" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+        </Grid>
+        <DockPanel DockPanel.Dock="Bottom" Margin="0 5 15 15" HorizontalAlignment="Right">
+
+
+            <Button
+                    CommandParameter="{Binding ElementName=listEmployee2, Path=SelectedItems}"
+                    Command="{Binding DeleteEmployee}"
+                    Margin="0 0 10 0"
+                    Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                    ToolTip="Xóa nhân viên"
+                    Visibility="{Binding Visibility, ElementName=cardInfo2}">
+                <materialDesign:PackIcon
+                        Kind="DeleteForever"
+                        Height="24"
+                        Width="24" />
+            </Button>
+
+            <Button
+                    Command="{Binding NewEmployee}"
+                    Name="btnAdd2"
+                    Style="{StaticResource MaterialDesignFloatingActionDarkButton}"
+                    ToolTip="Thêm nhân viên mới">
+                <materialDesign:PackIcon Kind="PersonAddOutline" Height="24" Width="24"/>
+            </Button>
+        </DockPanel>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <DataGrid
+                FontSize="16"
+                SelectionMode="Single"
+                    CanUserDeleteRows="False"
+                    SelectedItem="{Binding SelectedEmployee}"
+                    Name="listEmployee2"
+                    VerticalScrollBarVisibility="Auto"
+                    Grid.Row="1"
+                    Background="Transparent"
+                    ItemsSource="{Binding List, Mode=TwoWay}"
+                    Margin="5 8 5 0"
+                    CanUserSortColumns="True"
+                    CanUserAddRows="False"
+                    AutoGenerateColumns="False"
+                    materialDesign:DataGridAssist.CellPadding="13 8 8 8"
+                    materialDesign:DataGridAssist.ColumnHeaderPadding="8">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontSize" Value="16"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding STT}"
+                                    Header="STT"
+                                    Width="60"
+                                    MaxLength="15"
+                                    IsReadOnly="True"/>
+
+                    <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding Name}"
+                                    Header="Họ tên"
+                                    Width="1.5*"
+                                    MaxLength="50"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                    <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                    <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding Phone}"
+                                    Header="Điện thoại"
+                                    Width="2*"
+                                    MaxLength="255"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <GridSplitter 
+                    Grid.Row="1" 
+                    Grid.Column="1"          
+                    HorizontalAlignment="Stretch"
+                    Background="Gray" 
+                    ShowsPreview="true"
+                    Width="1"/>
+
+
+            <materialDesign:Card
+                    Name="cardInfo2"
+                    Margin="5 8 5 0"
+                    Grid.Row="1"
+                    Background="{Binding ElementName=btnAdd2, Path=Background}"
+                    Grid.Column="2"
+                    Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                    Padding="0"
+                    Width="Auto">
+                <materialDesign:Card.Style>
+                    <Style TargetType="materialDesign:Card">
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=listEmployee2, Path=SelectedIndex}" Value="-1">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </materialDesign:Card.Style>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                            Grid.ColumnSpan="2"
+                            TextWrapping="Wrap"
+                            Grid.Row="0"
+                            Margin="16 16 16 4"
+                            Style="{StaticResource MaterialDesignHeadlineTextBlock}"
+                            Text="{Binding SelectedEmployee.Name, Mode=OneWay}"/>
+                    <Separator
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Style="{StaticResource MaterialDesignLightSeparator}" />
+                    <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedEmployee.Phone}" Value="">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Margin="16 0 5 8" Grid.Column="0" Kind="Phone">
+                            </materialDesign:PackIcon>
+                            <TextBlock
+                                    TextWrapping="WrapWithOverflow"
+                                    Grid.Column="1"
+                                    Margin="0 0 16 8"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    Text="{Binding SelectedEmployee.Phone, Mode=OneWay}"
+                                    Style="{StaticResource MaterialDesignBody2TextBlock}">
+                            </TextBlock>
+                        </Grid>
+
+                    </StackPanel>
+
+                    <Button
+                            Command="{Binding InfoEmployee}"
+                            CommandParameter="{Binding ElementName=listEmployee2, Path=SelectedItem}"
+                            Grid.Row="3"
+                            Grid.ColumnSpan="2"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Margin="10"
+                            materialDesign:RippleAssist.IsCentered="True">
+                        XEM CHI TIẾT
+                    </Button>
+
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+
+    </DockPanel>
+</UserControl>

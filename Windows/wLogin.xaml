@@ -1,0 +1,160 @@
+﻿<Window x:Name="loginWindow" x:Class="CONTACT_INFO.Windows.wLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CONTACT_INFO.Windows"
+        mc:Ignorable="d"
+        DataContext="{StaticResource LoginModel}"
+        Title="Contact Info" Height="289" Width="427"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="Transparent"
+        Visibility="{Binding IsShow}"
+        FontFamily="{DynamicResource MaterialDesignFont}" Icon="/CONTACT_INFO;component/icon.ico" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None"
+        AllowsTransparency="True">
+    <Border BorderBrush="{Binding ElementName=btnLogin, Path=Background}"
+            BorderThickness="2"
+            CornerRadius="10"
+            Background="White">
+        <materialDesign:DialogHost CloseOnClickAway="True" IsOpen="{Binding IsOpenDiaglog}">
+            <materialDesign:DialogHost.DialogContent>
+                <StackPanel Margin="20">
+                    <ProgressBar
+                      Style="{StaticResource MaterialDesignCircularProgressBar}"
+                      Value="35"
+                      IsIndeterminate="True" />
+                </StackPanel>
+            </materialDesign:DialogHost.DialogContent>
+            <StackPanel>
+                <materialDesign:ColorZone
+              CornerRadius="8 8 0 0"
+              Mode="PrimaryDark"
+              Padding="5" MouseDown="ColorZone_MouseDown">
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Right" Foreground="White"  MouseDown="btnClose_Click" Cursor="Hand" RenderTransformOrigin="0.5,0.5" Height="25" Width="26" TextAlignment="Center">
+                            <TextBlock.RenderTransform>
+                                <ScaleTransform></ScaleTransform>
+                            </TextBlock.RenderTransform>
+                        <materialDesign:PackIcon Kind="Close"  Height="24" Width="24"/>
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                            To="1"
+                                            Duration="0:0:0.3"
+                                            />
+                                                <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                            To="1"
+                                            Duration="0:0:0.3"
+                                            />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+
+                                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                            To="1.3"
+                                            Duration="0:0:0.3"
+                                            />
+                                                <DoubleAnimation
+                                            Storyboard.TargetProperty="RenderTransform.ScaleY"
+                                            To="1.3"
+                                            Duration="0:0:0.3"
+                                            />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                        <StackPanel
+                    Orientation="Horizontal">
+                            <TextBlock
+                        VerticalAlignment="Center"
+                        Margin="16 0 0 0">
+                        <Bold>Kết nối cơ sở dữ liệu</Bold>
+                            </TextBlock>
+                        </StackPanel>
+                    </DockPanel>
+                </materialDesign:ColorZone>
+                <Grid Margin="30 15 30 10" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <materialDesign:PackIcon Grid.Row="0" Grid.Column="0" Kind="Server" Foreground="{Binding ElementName=txtServerName, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" FontSize="14"/>
+                    <TextBox x:Name="txtServerName" Grid.Row="0" Grid.Column="1" materialDesign:HintAssist.Hint="Tên máy chủ cơ sở dữ liệu" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                        <TextBox.Text>
+                            <Binding Path="Servername">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+
+                    <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" Kind="Database" Foreground="{Binding ElementName=txtDatabase, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" FontSize="14"/>
+                    <TextBox Margin="0 5" x:Name="txtDatabase" Grid.Row="1" Grid.Column="1" materialDesign:HintAssist.Hint="Tên cơ sở dữ liệu" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                        <TextBox.Text>
+                            <Binding Path="Database">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+
+                    <materialDesign:PackIcon Grid.Row="2" Grid.Column="0" Kind="Account" Foreground="{Binding ElementName=txtAccount, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" FontSize="14"/>
+                    <TextBox Margin="0 5" x:Name="txtAccount" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Tên đăng nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}">
+                        <TextBox.Text>
+                            <Binding Path="Account">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+
+                    <materialDesign:PackIcon Grid.Row="3" Grid.Column="0" Kind="Key" Foreground="{Binding ElementName=txtPassword, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" FontSize="14"/>
+                    <PasswordBox
+                    Padding="3 0 0 0"
+                    Margin="0 5"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    x:Name="txtPassword"
+                    materialDesign:HintAssist.Hint="Mật khẩu đăng nhập"
+                    Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+
+                    <StackPanel Grid.Row="4" Margin="0 5 0 0" Grid.ColumnSpan="2">
+                        <Button
+                    x:Name="btnLogin"
+                    Height="40"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    Command="{Binding LoginCommand}" 
+                        CommandParameter="{Binding ElementName=loginWindow}"
+                        IsDefault="True">
+                            KẾT NỐI CƠ SỞ DỮ LIỆU
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+        </materialDesign:DialogHost>
+    </Border>
+</Window>

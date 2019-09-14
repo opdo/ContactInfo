@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="CONTACT_INFO.Windows.ucBill"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CONTACT_INFO.Windows"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Name="ucBill2"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="DataGridColumnSeparatorStyle" TargetType="DataGridCell">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Fill="LightGray"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid Margin="25" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <materialDesign:PackIcon Grid.Row="0" Grid.Column="0" Kind="User" Foreground="{Binding ElementName=txtFullname, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" FontSize="16" Visibility="{Binding CustomerId, RelativeSource={RelativeSource AncestorType=local:ucBill}}"/>
+            <ComboBox Margin="0 10 0 0" IsEditable="True" ItemsSource="{Binding ListData, Source={StaticResource MainModel}}" Grid.Row="0" Grid.Column="1" DisplayMemberPath="Fullname" SelectedValuePath="ID" materialDesign:HintAssist.Hint="Khách hàng" SelectedValue="{Binding Bill.IdCustomer}" Name="txtFullname" Visibility="{Binding CustomerId, RelativeSource={RelativeSource AncestorType=local:ucBill}}"/>
+
+            <materialDesign:PackIcon Grid.Row="1" Grid.Column="0" Kind="User" Foreground="{Binding ElementName=txtFullname2, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 0 10 0" FontSize="16"/>
+            <ComboBox Margin="0 10 0 0" IsEditable="True" ItemsSource="{Binding List, Source={StaticResource EmployeeVM}}" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Name" SelectedValuePath="Id" materialDesign:HintAssist.Hint="Nhân viên giao hàng" SelectedValue="{Binding Bill.IdEmployee}" Name="txtFullname2"/>
+
+            <materialDesign:PackIcon Grid.Row="2" Grid.Column="0" Kind="Calendar" Foreground="{Binding ElementName=txtDate, Path=BorderBrush}" VerticalAlignment="Center" Margin="4 10 10 0" FontSize="16" Visibility="{Binding DateBill, RelativeSource={RelativeSource AncestorType=local:ucBill}}"/>
+            <DatePicker Margin="0 10 0 0" SelectedDate="{Binding Bill.DateBuy}"  x:Name="txtDate" Grid.Row="2" Grid.Column="1" materialDesign:HintAssist.Hint="Ngày lập hóa đơn" Style="{StaticResource MaterialDesignFloatingHintDatePicker}" Visibility="{Binding DateBill, RelativeSource={RelativeSource AncestorType=local:ucBill}}"/>
+
+            <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="3" Grid.ColumnSpan="2" Margin="0 10 0 0" MaxHeight="200">
+                <DataGrid
+                    Foreground="{Binding ElementName=ucBill2}"
+                    FontSize="16"
+                    CanUserDeleteRows="False"
+                    Name="listProduct2"
+                    VerticalScrollBarVisibility="Auto"
+                    Grid.Row="1"
+                    Background="Transparent"
+                    ItemsSource="{Binding Bill.ListProduct, Mode=TwoWay}"
+                    Margin="5 8 5 0"
+                    CanUserSortColumns="True"
+                    CanUserAddRows="False"
+                    AutoGenerateColumns="False"
+                    materialDesign:DataGridAssist.CellPadding="13 8 8 8"
+                    materialDesign:DataGridAssist.ColumnHeaderPadding="8" CellEditEnding="ListProduct2_CellEditEnding">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontSize" Value="16"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="CurrentCellChanged">
+                            <i:InvokeCommandAction Command="{Binding CurrentCellChanged}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    
+                    <DataGrid.Columns>
+                        <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding STT}"
+                                    Header="STT"
+                                    Width="60"
+                                    MaxLength="15"
+                                    IsReadOnly="True"/>
+
+                        <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+
+                        <materialDesign:MaterialDataGridComboBoxColumn
+                                      Header="Tên sản phẩm"
+                                      DisplayMemberPath="Name"
+                                      Width="2*"
+                                      SelectedValuePath="Id"
+                                      SelectedValueBinding="{Binding Id}"
+                                      ItemsSourceBinding="{Binding List, Source={StaticResource ProductVM}}" />
+                        <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                        <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding Price, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N0}}"
+                                    Header="Đơn giá"
+                                    Width="1*"
+                                    MaxLength="255"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                        <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                        <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding Count, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:N0}}"
+                                    Header="Số lượng"
+                                    Width="1*"
+                                    MaxLength="255"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                        <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                        <materialDesign:MaterialDataGridTextColumn
+                                    Binding="{Binding TotalMoney, StringFormat={}{0:N0}}"
+                                    Header="Thành tiền"
+                                    Width="1*"
+                                    IsReadOnly="True"
+                                    MaxLength="255"
+                                    EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                        <DataGridTemplateColumn MinWidth="1" Width="1" CellStyle="{StaticResource DataGridColumnSeparatorStyle}"/>
+                        <DataGridTemplateColumn Width="80">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FFFF1E1E" BorderBrush="#FFFF1E1E" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:ucBill}}, Path=DataContext.DeleteProduct}" CommandParameter="{Binding}">
+                                        <materialDesign:PackIcon Kind="Trashcan" />
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </ScrollViewer>
+
+            <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                <TextBlock FontSize="18" TextAlignment="Right" Margin="5">
+                    <Run Text="Tổng trị giá hóa đơn"></Run>
+                    <LineBreak/>
+                    <Run FontWeight="SemiBold" FontSize="25" Text="{Binding Bill.TotalMoney, StringFormat={}{0:N0}}"/>
+                    <Run FontWeight="SemiBold" FontSize="25" Text="VNĐ"/>
+                </TextBlock>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</UserControl>
